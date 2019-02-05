@@ -1,0 +1,44 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: table;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: Georgia, serif;
+}
+
+h1{
+	margin-right: 90px;
+	color: #ff409f;
+	text-shadow: 3px 2px white;
+	font-size: 45px;
+}
+
+table{
+	margin-right: 50px;
+}
+
+button,input{
+	font-size: 20px;
+	border-radius: 25px;
+	padding:5px 10px 5px 10px;
+	background: #ff9bcd;
+	color: white;
+}
+
+a{
+	text-decoration: none;
+	font-size: 15px;
+	color: white;
+	padding: 5px 10px 5px 10px;
+	margin: 5px;
+	border: 1px solid white;
+	border-radius: 25px;
+}
