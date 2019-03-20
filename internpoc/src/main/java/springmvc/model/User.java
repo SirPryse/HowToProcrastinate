@@ -1,5 +1,7 @@
 package springmvc.model;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class User {
@@ -9,10 +11,13 @@ public class User {
 	@NotBlank
 	private String password;
 	@NotBlank
+	@Length(min = 4,max = 15)
 	private String firstname;
 	@NotBlank
+	@Length(min = 4,max = 15)
 	private String lastname;
 	@NotBlank
+	@Email
 	private String email;
 	@NotBlank
 	private String address;

@@ -1,8 +1,6 @@
 package springmvc.controller;
 
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +22,7 @@ public class RegistrationController {
 	public UserService userService;
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView showRegister() {
 		ModelAndView mav = new ModelAndView("register");
 		mav.addObject("user", new User());
 		return mav;

@@ -1,7 +1,5 @@
 package springmvc.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,16 +17,15 @@ public class LoginController {
 	UserService userService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView showLogin() {
 		ModelAndView mav = new ModelAndView("login");
 		mav.addObject("login", new Login());
 		return mav;
 	}
 
 	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
-	public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
-			@ModelAttribute("login") Login login) {
-		ModelAndView mav = null;
+	public ModelAndView loginProcess(@ModelAttribute("login") Login login) {
+		ModelAndView mav;
 		User user = userService.validateUser(login);
 		if (null != user) {
 			mav = new ModelAndView("options");
