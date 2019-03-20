@@ -5,12 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%-- <meta http-equiv="refresh" content="<%=session.getMaxInactiveInterval()%>" url="http://localhost:8080/internpoc/login" /> --%>
 <link href="resources/css/optionsimage.css" rel="stylesheet" />
 <script type="text/javascript">
 	function myFunction() {
 		var lolz = document.getElementById('wiki');
 		var url = "https://en.wikipedia.org/wiki/" + lolz.value;
-		document.location.href = url;
+		var x = document.getElementById('portal');
+		var y = document.getElementById('iframe');
+		x.src = url;
+		y.style.display = "block";
 	}
 	function findaboutyou() {
 		var lolz = document.getElementById('about');
@@ -35,13 +39,25 @@
 		var url = "https://www.youtube.com/results?search_query=" + lolz.value;
 		document.location.href = url;
 	}
+	function toggle(){
+		document.getElementById('iframe').style.display = "none";
+	}
 </script>
-
+<style type="text/css">
+h1#closeFrame:hover {
+	color: black;
+}
+</style>
 <title>Make your Choice</title>
 </head>
 <body background="resources/img/optionsimage.jpg">
-	<h1 align="right">Make your choice, ${firstname} !</h1>
-	<table align="right">
+<div id="iframe" style="position: absolute; top:10%; left: 6%; display:none; width:50%; height: 75%;">
+	<h1 id="closeFrame" onclick="toggle()" style="color: pink; font-size: 25px; margin-left:98%;" >X</h1>
+	<iframe id="portal" src="https://www.wikipedia.org/" style= "width:100%; height:100%;"></iframe>
+</div>
+	<audio loop="true" autoplay="true" src="resources/music/sound.mp3"></audio>
+	<h1 style="margin-left: 65%;">Make your choice, ${firstname} !</h1>
+	<table style="margin-left: 67%;">
 		<tr>
 			<td><button onclick="agecalc()">Age Finder</button></td>
 			<td><input type="text" id="yourage" value="${DOB}"></td>
@@ -95,11 +111,19 @@
 			<td><input type="text" name="utube" placeholder="Youtube Here" id="utube"></td>
 		</tr>
 		<tr>
+		<td colspan="2"><form action="jsp/game.jsp">
+			<input type="submit" value="Can you win?" />
+			</form>
+		</td>
+		<td></td>
+		</tr>
+		<tr>
 			<td align="center" colspan="2"><form action="home.jsp">
 					<input type="submit" value="Go Back Home" />
 				</form></td>
 			<td></td>
 		</tr>
+		
 	</table>
 </body>
 </html>

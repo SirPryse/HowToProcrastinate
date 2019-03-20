@@ -11,7 +11,7 @@
 <h1 align="left">Registration</h1>
 	<form:form id="regForm" modelAttribute="user" action="registerProcess"
 		method="post">
-		<table align="left">
+		<table>
 			<tr>
 				<td><form:label path="username">Username</form:label></td>
 				<td><form:input path="username" name="username" id="username" /><form:errors style="color: red;" path="username" />
@@ -22,7 +22,7 @@
 				<td><form:password path="password" name="password"
 						id="password" /><form:errors style="color: red;" path="password" /></td>
 			</tr>
-			
+			<tr>
 				<td><form:label path="firstname">FirstName</form:label></td>
 				<td><form:input path="firstname" name="firstname"
 						id="firstname" /><form:errors style="color: red;" path="firstname" /></td>
@@ -47,7 +47,7 @@
 			</tr> 
 			<tr>
 				<td><form:label path="DOB">Date of Birth</form:label></td>
-				<td><form:input path="DOB" name="DOB" id="DOB" placeholder="YYYY-MM-DD" /><form:errors style="color: red;" path="DOB" />
+				<td><form:input path="DOB" name="DOB" id="DOB" placeholder="yyyy-mm-dd" /><form:errors style="color: red;" path="DOB" />
 				</td>
 			</tr>
 			<tr>
